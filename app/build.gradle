@@ -31,6 +31,15 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        ndk {
+            abiFilters "armeabi-v7a", "arm64-v8a"  // 필수
+        }
+    }
+    packagingOptions {
+        pickFirst 'lib/**/libtensorflowlite_task_vision_jni.so'
+        pickFirst 'lib/**/libtensorflowlite_jni.so'
+        pickFirst "lib/**/libtask_vision_jni.so"
+
     }
 
     buildTypes {
@@ -96,4 +105,22 @@ dependencies {
 
     // MediaPipe Library
     implementation 'com.google.mediapipe:tasks-vision:0.10.14'
+
+    //텐서플로우
+
+    implementation 'org.tensorflow:tensorflow-lite:2.13.0'
+    implementation 'org.tensorflow:tensorflow-lite-support:0.4.3'
+    implementation 'org.tensorflow:tensorflow-lite-task-vision:0.4.3'
+    implementation 'org.tensorflow:tensorflow-lite-metadata:0.4.2'
+    implementation 'org.tensorflow:tensorflow-lite-gpu:2.9.0' // GPU 가속을 원할 경우 추가
+
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.5.1"
+//    implementation 'me.relex:circleindicator:2.1.6'
+//    implementation 'androidx.viewpager2:viewpager2:1.0.0'
+//    implementation 'androidx.appcompat:appcompat:1.6.1'
+//    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+//    implementation 'androidx.fragment:fragment-ktx:1.6.1'
+
+
+
 }

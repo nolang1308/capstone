@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="70dp"
+android:layout_height="100dp">
+
+    <SurfaceView
+        android:id="@+id/camera_preview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#000000" />
+
+<!-- 랜드마크 오버레이 (카메라 위에 덧씌워짐) -->
+<com.google.mediapipe.examples.handlandmarker.HandLandmarkOverlayView
+    android:id="@+id/landmark_overlay"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" />
+
+</FrameLayout>

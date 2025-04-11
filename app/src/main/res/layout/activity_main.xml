@@ -1,71 +1,117 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-    ~ Copyright 2022 The TensorFlow Authors. All Rights Reserved.
-    ~
-    ~ Licensed under the Apache License, Version 2.0 (the "License");
-    ~ you may not use this file except in compliance with the License.
-    ~ You may obtain a copy of the License at
-    ~
-    ~       http://www.apache.org/licenses/LICENSE-2.0
-    ~
-    ~ Unless required by applicable law or agreed to in writing, software
-    ~ distributed under the License is distributed on an "AS IS" BASIS,
-    ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    ~ See the License for the specific language governing permissions and
-    ~ limitations under the License.
--->
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/transparent">
+    android:background="#F2F2F7"
+    android:orientation="vertical"
 
-    <RelativeLayout
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/partialsanskr_regular"
+        android:text="핫모션"
+        android:textColor="#000000"
+        android:textSize="24sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="156dp"
+        android:layout_marginTop="26dp"
+        android:background="@drawable/rounded_background"
+        android:padding="16dp"
         android:orientation="vertical">
-
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/fragment_container"
-            android:name="androidx.navigation.fragment.NavHostFragment"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="?android:attr/actionBarSize"
-            android:background="@android:color/transparent"
-            android:keepScreenOn="true"
-            app:defaultNavHost="true"
-            app:navGraph="@navigation/nav_graph"
-            tools:context=".MainActivity" />
-
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:layout_alignParentTop="true"
-            android:background="@color/toolbar_background">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/media_pipe_banner" />
-        </androidx.appcompat.widget.Toolbar>
-
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/navigation"
+        <TextView
+            android:id="@+id/title1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/toolbar"
-            app:itemIconTint="@color/bg_nav_item"
-            app:itemTextColor="@color/bg_nav_item"
-            app:menu="@menu/menu_bottom_nav" />
+            android:fontFamily="@font/pretendard_bold"
+            android:text="안녕하세요, 핫모션 입니다 😊"
+            android:textColor="#333D4B"
 
-        <View
-            android:id="@+id/view"
+            android:textSize="20sp" />
+        <TextView
+            android:layout_marginTop="13dp"
+            android:id="@+id/title2"
             android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_below="@id/navigation"
-            android:background="@android:color/darker_gray" />
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/pretendard_bold"
+            android:text="원하는 기능을 원하는 동작 하나로! 빠르게!"
+            android:textColor="#6D7684"
 
-    </RelativeLayout>
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+            android:textSize="16sp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/add_motion_page_btn"
+            android:layout_marginTop="13dp"
+
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:text="원하는 모션 추가하기"
+            android:fontFamily="@font/pretendard_bold"
+            android:textSize="16dp"
+            app:icon="@drawable/add_icon"
+            app:iconGravity="textStart"
+            app:iconPadding="8dp"
+            android:layout_gravity="center"
+            app:iconSize="24dp" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="62dp"
+        android:orientation="horizontal"
+        android:background="@drawable/rounded_background"
+        android:layout_marginTop="26dp"
+        android:gravity="center"> <!-- 가운데 정렬 추가 -->
+
+        <TextView
+            android:id="@+id/start_title"
+            android:layout_width="154dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/pretendard_semibold"
+            android:text="1초만에 모션 활성화"
+            android:textColor="#333D4B"
+            android:textSize="16sp" />
+
+        <ToggleButton
+            android:id="@+id/toggleButton1"
+            android:layout_width="48dp"
+            android:layout_height="25dp"
+            android:background="@drawable/toggle_selecter"
+            android:checked="false"
+            android:textOff=""
+            android:textOn=""
+            android:text="" />
+
+    </LinearLayout>
+    <TextView
+        android:layout_marginTop="18dp"
+        android:id="@+id/registered_motions_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/pretendard_bold"
+        android:text="등록된 모션"
+        android:textColor="#000000"
+        android:textSize="20sp" />
+
+    <GridView
+        android:layout_marginTop="12dp"
+        android:id="@+id/gridView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:numColumns="2"
+        android:verticalSpacing="8dp"
+        android:horizontalSpacing="8dp"
+        android:stretchMode="columnWidth"
+        android:gravity="center"/>
+
+
+</LinearLayout>

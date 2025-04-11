@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="116dp"
+    android:background="@drawable/item_background"
+    android:padding="8dp">
+
+    <!-- 닫기(X) 버튼 - 오른쪽 상단 -->
+    <ImageButton
+        android:id="@+id/close_button"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:layout_gravity="top|end"
+        android:background="@android:color/transparent"
+        android:src="@drawable/icon_x"
+        android:contentDescription="닫기" />
+
+    <!-- 실제 내용은 왼쪽 정렬 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="start"
+        android:paddingEnd="32dp"> <!-- X 버튼 영역 피해줌 -->
+
+        <ImageView
+            android:id="@+id/item_image"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:scaleType="centerCrop"
+            android:background="@color/toolbar_background" />
+
+        <TextView
+            android:id="@+id/item_text1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Text 1"
+            android:fontFamily="@font/pretendard_bold"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp"
+            android:textColor="#ffffff" />
+
+        <TextView
+            android:id="@+id/item_text2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Text 2"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/pretendard_regular"
+            android:textSize="12sp"
+            android:textColor="#B0B8C1" />
+    </LinearLayout>
+</FrameLayout>

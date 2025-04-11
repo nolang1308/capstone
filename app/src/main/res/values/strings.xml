@@ -15,7 +15,10 @@
     ~ limitations under the License.
 -->
 <resources>
-    <string name="app_name">MP Hand Landmarker</string>
+    <string name="accessibility_service_description">
+    손 제스처를 인식하여 화면을 자동으로 제어합니다.
+</string>
+    <string name="app_name">HOT motion</string>
 
     <string name="media_pipe">MediaPipe</string>
 

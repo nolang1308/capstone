@@ -38,4 +38,12 @@
     <style name="AppThemeProgressStyle">
         <item name="colorAccent">@color/mp_color_primary_variant</item>
     </style>
+    <style name="Theme.TransparentActionBar" parent="Theme.AppCompat.Light">
+        <item name="actionBarStyle">@style/TransparentActionBar</item>
+    </style>
+
+    <style name="TransparentActionBar" parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
+        <item name="background">@android:color/transparent</item>
+        <item name="elevation">0dp</item> <!-- 그림자 제거 -->
+    </style>
 </resources>
